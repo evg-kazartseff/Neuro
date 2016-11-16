@@ -1,5 +1,5 @@
-set(CF_HEADERS ./lib/qdbmp.h neuro.h)
-set(CF_SOURCES ./lib/qdbmp.c neuro.c main.c)
+if(BUILD_TRAINING)
+	add_subdirectory(training)
+endif(BUILD_TRAINING)
 
-add_executable(${PROJECT_NAME} ${CF_HEADERS} ${CF_SOURCES})
-target_link_libraries(${PROJECT_NAME} m)
+add_subdirectory(app)
